@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(Home.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Added for mobile responsiveness */
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    opacity: 1; /* Changed opacity to 1 for visibility */
+}
+
+.navbar ul {
+    display: flex; /* Changed to flex for responsive behavior */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px; /* Adjusted margin for smaller screens */
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 5px;
+    width: 0;
+    background: #e600ff;
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 20px auto;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #e600ff;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Space out items */
+    }
+
+    .content h1 {
+        font-size: 40px; /* Smaller heading for mobile */
+    }
+
+    .content p {
+        font-size: 16px; /* Smaller paragraph text */
+    }
+
+    button {
+        width: 100%; /* Full width buttons */
+        margin: 10px 0; /* Adjusted margin */
+    }
+}
+  .L3 {
+    color: #b56000;
+    text-decoration: none;
+}
+  
+  .L3:hover {
+    text-decoration: underline; 
+  }
+
+  .L4 {
+    color: #fd221f;
+    text-decoration: none;
+}
+  
+  .L4:hover {
+    text-decoration: underline; 
+  }
+
+  .L5 {
+    color: #00ff84;
+    text-decoration: none;
+}
+  
+  .L5:hover {
+    text-decoration: underline; 
+  }
+
+  .dictedit{
+    text-align: left;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    top: 100;
+    text-wrap: balance;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+.centre{
+  text-align: center;
+  margin-left: 60px;
+  margin-right: 60px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #ffffff;
+  top: 70;
+  text-wrap: balance;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 25px;
+  
+}px;
+  
+}
