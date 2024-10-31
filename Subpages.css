@@ -1,53 +1,56 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', sans-serif;
+    box-sizing: border-box; /* Added for better box model handling */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.banner {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(Home.jpg);
-    background-size: cover;
-    background-position: center;
+/* Body */
+.Body {
+    margin: 0;
+    padding: 0;
 }
 
-.navbar {
+/* Headline and Text */
+.HeadnText {
+    text-align: left;
+    margin: 60px;
+    position: relative;
+    color: #fff;
+}
+
+/* Home Navigation */
+.Home {
     width: 85%;
     margin: auto;
     padding: 35px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Added for mobile responsiveness */
+    position: fixed; /* Consider changing to relative for mobile */
+    top: 10px; /* Changed from 10 to 10px */
+    left: 50%; /* Center the navbar */
+    transform: translateX(-50%); /* Center horizontally */
 }
 
-.logo {
-    width: 120px;
-    cursor: pointer;
-    opacity: 1; /* Changed opacity to 1 for visibility */
+.Home ul {
+    display: flex; /* Use flexbox for the navigation */
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
 }
 
-.navbar ul {
-    display: flex; /* Changed to flex for responsive behavior */
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    padding: 0; /* Remove default padding */
-}
-
-.navbar ul li {
+.Home ul li {
     list-style: none;
-    display: inline-block;
     margin: 0 10px; /* Adjusted margin for smaller screens */
-    position: relative;
 }
 
-.navbar ul li a {
+.Home ul li a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
 }
 
-.navbar ul li::after {
+.Home ul li::after {
     content: '';
     height: 5px;
     width: 0;
@@ -58,141 +61,119 @@
     transition: 0.5s;
 }
 
-.navbar ul li:hover::after {
+.Home ul li:hover::after {
     width: 100%;
 }
 
-.content {
+/* Background Sections */
+.dict {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
+    height: 280vh; /* Consider changing to min-height for better flexibility */
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(255, 255, 255, 0) 100%), url(best.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.content h1 {
-    font-size: 70px;
-    margin-top: 20px auto;
+.Body1,
+.Body2,
+.Body3,
+.Body4,
+.Body5 {
+    width: 100%;
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
 }
 
-.content p {
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
+.Body1 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(fight.png);
 }
 
-button {
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #ffffff;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
+.Body2 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(night.jpg);
+}
+
+.Body3 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.80)), url(rails.jpeg);
+}
+
+.Body4 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(redmine.jpg);
+}
+
+.Body5 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.45), rgba(0, 0, 0, 0.90)), url(desert.jpeg);
+}
+
+.Updates {
+    width: 100%;
+    height: 180vh;
+    background-image: url(updeta.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Links Styling */
+.L1, .L2, .L3, .L4, .L5 {
+    text-decoration: none;
+}
+
+.L1 { color: #24e34d; }
+.L2 { color: #cb3bff; }
+.L3 { color: #b56000; }
+.L4 { color: #fd221f; }
+.L5 { color: #00ff84; }
+
+.L1:hover, .L2:hover, .L3:hover, .L4:hover, .L5:hover {
+    text-decoration: underline; 
+}
+
+/* Dict Edit Section */
+.dictedit {
+    text-align: left;
+    margin: 60px;
     position: relative;
-    overflow: hidden;
+    color: #fff;
 }
 
-span {
-    background: #e600ff;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
-
-button:hover span {
-    width: 100%;
-}
-
-button:hover {
-    border: none;
+/* Centered Text */
+.centre {
+    text-align: center;
+    margin: 60px;
+    position: relative;
+    color: #ffffff;
+    font-size: 25px;
 }
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
-    .navbar {
+    .Home {
         flex-direction: column; /* Stack navbar items vertically */
         align-items: center; /* Center items */
     }
 
-    .navbar ul li {
+    .Home ul li {
         margin: 10px 0; /* Space out items */
     }
 
-    .content h1 {
-        font-size: 40px; /* Smaller heading for mobile */
+    .HeadnText, .dictedit, .centre {
+        margin: 30px; /* Adjust margin for smaller screens */
     }
 
-    .content p {
-        font-size: 16px; /* Smaller paragraph text */
+    .Body1, .Body2, .Body3, .Body4, .Body5 {
+        height: 80vh; /* Reduce height for mobile */
     }
 
-    button {
-        width: 100%; /* Full width buttons */
-        margin: 10px 0; /* Adjusted margin */
+    .dict {
+        height: auto; /* Allow auto height */
     }
-}
-  .L3 {
-    color: #b56000;
-    text-decoration: none;
-}
-  
-  .L3:hover {
-    text-decoration: underline; 
-  }
 
-  .L4 {
-    color: #fd221f;
-    text-decoration: none;
-}
-  
-  .L4:hover {
-    text-decoration: underline; 
-  }
+    .Updates {
+        height: auto; /* Allow auto height */
+    }
 
-  .L5 {
-    color: #00ff84;
-    text-decoration: none;
-}
-  
-  .L5:hover {
-    text-decoration: underline; 
-  }
-
-  .dictedit{
-    text-align: left;
-    margin-left: 60px;
-    margin-right: 60px;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    color: #fff;
-    top: 100;
-    text-wrap: balance;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-  }
-.centre{
-  text-align: center;
-  margin-left: 60px;
-  margin-right: 60px;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: #ffffff;
-  top: 70;
-  text-wrap: balance;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-size: 25px;
-  
-}px;
-  
+    /* Adjust font sizes */
+    .centre {
+        font-size: 20px; /* Smaller text for mobile */
+    }
 }
